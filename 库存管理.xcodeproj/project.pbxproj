@@ -1,0 +1,599 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		8F14AD621C92681600CADABA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F14AD611C92681600CADABA /* main.m */; };
+		8F14AD651C92681600CADABA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F14AD641C92681600CADABA /* AppDelegate.m */; };
+		8F14AD6B1C92681600CADABA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8F14AD691C92681600CADABA /* Main.storyboard */; };
+		8F14AD6D1C92681600CADABA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8F14AD6C1C92681600CADABA /* Assets.xcassets */; };
+		8F14AD701C92681600CADABA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8F14AD6E1C92681600CADABA /* LaunchScreen.storyboard */; };
+		8F14AD7B1C92681600CADABA /* ____Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F14AD7A1C92681600CADABA /* ____Tests.m */; };
+		8F14AD861C92681700CADABA /* ____UITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F14AD851C92681700CADABA /* ____UITests.m */; };
+		8F14ADAA1C92985300CADABA /* NaviViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F14ADA01C92985300CADABA /* NaviViewController.m */; };
+		8F14ADAB1C92985300CADABA /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F14ADA21C92985300CADABA /* ViewController.m */; };
+		8F14ADAC1C92985300CADABA /* Model.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F14ADA51C92985300CADABA /* Model.m */; };
+		8F14ADAD1C92985300CADABA /* MainView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F14ADA81C92985300CADABA /* MainView.m */; };
+		8F14ADAE1C92985300CADABA /* MainView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8F14ADA91C92985300CADABA /* MainView.xib */; };
+		8F14ADB11C92999100CADABA /* WriteProduct.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F14ADB01C92999100CADABA /* WriteProduct.m */; };
+		8F14ADB31C9299A500CADABA /* WriteProduct.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8F14ADB21C9299A500CADABA /* WriteProduct.xib */; };
+		8F14ADB61C929D9800CADABA /* WriteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F14ADB51C929D9800CADABA /* WriteViewController.m */; };
+		8F14ADB91C929E6300CADABA /* ChooseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F14ADB81C929E6300CADABA /* ChooseViewController.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		8F14AD771C92681600CADABA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8F14AD551C92681600CADABA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8F14AD5C1C92681600CADABA;
+			remoteInfo = "库存管理";
+		};
+		8F14AD821C92681700CADABA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8F14AD551C92681600CADABA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8F14AD5C1C92681600CADABA;
+			remoteInfo = "库存管理";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		8F14AD5D1C92681600CADABA /* 库存管理.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "库存管理.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8F14AD611C92681600CADABA /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		8F14AD631C92681600CADABA /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		8F14AD641C92681600CADABA /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		8F14AD6A1C92681600CADABA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		8F14AD6C1C92681600CADABA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		8F14AD6F1C92681600CADABA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		8F14AD711C92681600CADABA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8F14AD761C92681600CADABA /* 库存管理Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "库存管理Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8F14AD7A1C92681600CADABA /* ____Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "____Tests.m"; sourceTree = "<group>"; };
+		8F14AD7C1C92681600CADABA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8F14AD811C92681600CADABA /* 库存管理UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "库存管理UITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8F14AD851C92681700CADABA /* ____UITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "____UITests.m"; sourceTree = "<group>"; };
+		8F14AD871C92681700CADABA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8F14AD9F1C92985300CADABA /* NaviViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NaviViewController.h; sourceTree = "<group>"; };
+		8F14ADA01C92985300CADABA /* NaviViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NaviViewController.m; sourceTree = "<group>"; };
+		8F14ADA11C92985300CADABA /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		8F14ADA21C92985300CADABA /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		8F14ADA41C92985300CADABA /* Model.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Model.h; sourceTree = "<group>"; };
+		8F14ADA51C92985300CADABA /* Model.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Model.m; sourceTree = "<group>"; };
+		8F14ADA71C92985300CADABA /* MainView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainView.h; sourceTree = "<group>"; };
+		8F14ADA81C92985300CADABA /* MainView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainView.m; sourceTree = "<group>"; };
+		8F14ADA91C92985300CADABA /* MainView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainView.xib; sourceTree = "<group>"; };
+		8F14ADAF1C92999100CADABA /* WriteProduct.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WriteProduct.h; sourceTree = "<group>"; };
+		8F14ADB01C92999100CADABA /* WriteProduct.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WriteProduct.m; sourceTree = "<group>"; };
+		8F14ADB21C9299A500CADABA /* WriteProduct.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WriteProduct.xib; sourceTree = "<group>"; };
+		8F14ADB41C929D9800CADABA /* WriteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WriteViewController.h; sourceTree = "<group>"; };
+		8F14ADB51C929D9800CADABA /* WriteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WriteViewController.m; sourceTree = "<group>"; };
+		8F14ADB71C929E6300CADABA /* ChooseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChooseViewController.h; sourceTree = "<group>"; };
+		8F14ADB81C929E6300CADABA /* ChooseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChooseViewController.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8F14AD5A1C92681600CADABA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8F14AD731C92681600CADABA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8F14AD7E1C92681600CADABA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		8F14AD541C92681600CADABA = {
+			isa = PBXGroup;
+			children = (
+				8F14AD5F1C92681600CADABA /* 库存管理 */,
+				8F14AD791C92681600CADABA /* 库存管理Tests */,
+				8F14AD841C92681700CADABA /* 库存管理UITests */,
+				8F14AD5E1C92681600CADABA /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		8F14AD5E1C92681600CADABA /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8F14AD5D1C92681600CADABA /* 库存管理.app */,
+				8F14AD761C92681600CADABA /* 库存管理Tests.xctest */,
+				8F14AD811C92681600CADABA /* 库存管理UITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		8F14AD5F1C92681600CADABA /* 库存管理 */ = {
+			isa = PBXGroup;
+			children = (
+				8F14AD631C92681600CADABA /* AppDelegate.h */,
+				8F14AD641C92681600CADABA /* AppDelegate.m */,
+				8F14AD691C92681600CADABA /* Main.storyboard */,
+				8F14AD9E1C92985300CADABA /* Controller */,
+				8F14ADA31C92985300CADABA /* Model */,
+				8F14ADA61C92985300CADABA /* View */,
+				8F14AD6C1C92681600CADABA /* Assets.xcassets */,
+				8F14AD6E1C92681600CADABA /* LaunchScreen.storyboard */,
+				8F14AD711C92681600CADABA /* Info.plist */,
+				8F14AD601C92681600CADABA /* Supporting Files */,
+			);
+			path = "库存管理";
+			sourceTree = "<group>";
+		};
+		8F14AD601C92681600CADABA /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				8F14AD611C92681600CADABA /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		8F14AD791C92681600CADABA /* 库存管理Tests */ = {
+			isa = PBXGroup;
+			children = (
+				8F14AD7A1C92681600CADABA /* ____Tests.m */,
+				8F14AD7C1C92681600CADABA /* Info.plist */,
+			);
+			path = "库存管理Tests";
+			sourceTree = "<group>";
+		};
+		8F14AD841C92681700CADABA /* 库存管理UITests */ = {
+			isa = PBXGroup;
+			children = (
+				8F14AD851C92681700CADABA /* ____UITests.m */,
+				8F14AD871C92681700CADABA /* Info.plist */,
+			);
+			path = "库存管理UITests";
+			sourceTree = "<group>";
+		};
+		8F14AD9E1C92985300CADABA /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				8F14AD9F1C92985300CADABA /* NaviViewController.h */,
+				8F14ADA01C92985300CADABA /* NaviViewController.m */,
+				8F14ADA11C92985300CADABA /* ViewController.h */,
+				8F14ADA21C92985300CADABA /* ViewController.m */,
+				8F14ADB41C929D9800CADABA /* WriteViewController.h */,
+				8F14ADB51C929D9800CADABA /* WriteViewController.m */,
+				8F14ADB71C929E6300CADABA /* ChooseViewController.h */,
+				8F14ADB81C929E6300CADABA /* ChooseViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		8F14ADA31C92985300CADABA /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				8F14ADA41C92985300CADABA /* Model.h */,
+				8F14ADA51C92985300CADABA /* Model.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		8F14ADA61C92985300CADABA /* View */ = {
+			isa = PBXGroup;
+			children = (
+				8F14ADA71C92985300CADABA /* MainView.h */,
+				8F14ADA81C92985300CADABA /* MainView.m */,
+				8F14ADA91C92985300CADABA /* MainView.xib */,
+				8F14ADAF1C92999100CADABA /* WriteProduct.h */,
+				8F14ADB01C92999100CADABA /* WriteProduct.m */,
+				8F14ADB21C9299A500CADABA /* WriteProduct.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		8F14AD5C1C92681600CADABA /* 库存管理 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8F14AD8A1C92681700CADABA /* Build configuration list for PBXNativeTarget "库存管理" */;
+			buildPhases = (
+				8F14AD591C92681600CADABA /* Sources */,
+				8F14AD5A1C92681600CADABA /* Frameworks */,
+				8F14AD5B1C92681600CADABA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "库存管理";
+			productName = "库存管理";
+			productReference = 8F14AD5D1C92681600CADABA /* 库存管理.app */;
+			productType = "com.apple.product-type.application";
+		};
+		8F14AD751C92681600CADABA /* 库存管理Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8F14AD8D1C92681700CADABA /* Build configuration list for PBXNativeTarget "库存管理Tests" */;
+			buildPhases = (
+				8F14AD721C92681600CADABA /* Sources */,
+				8F14AD731C92681600CADABA /* Frameworks */,
+				8F14AD741C92681600CADABA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8F14AD781C92681600CADABA /* PBXTargetDependency */,
+			);
+			name = "库存管理Tests";
+			productName = "库存管理Tests";
+			productReference = 8F14AD761C92681600CADABA /* 库存管理Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		8F14AD801C92681600CADABA /* 库存管理UITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8F14AD901C92681700CADABA /* Build configuration list for PBXNativeTarget "库存管理UITests" */;
+			buildPhases = (
+				8F14AD7D1C92681600CADABA /* Sources */,
+				8F14AD7E1C92681600CADABA /* Frameworks */,
+				8F14AD7F1C92681600CADABA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8F14AD831C92681700CADABA /* PBXTargetDependency */,
+			);
+			name = "库存管理UITests";
+			productName = "库存管理UITests";
+			productReference = 8F14AD811C92681600CADABA /* 库存管理UITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		8F14AD551C92681600CADABA /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0720;
+				ORGANIZATIONNAME = Arthur;
+				TargetAttributes = {
+					8F14AD5C1C92681600CADABA = {
+						CreatedOnToolsVersion = 7.2;
+						DevelopmentTeam = M9F72566GH;
+					};
+					8F14AD751C92681600CADABA = {
+						CreatedOnToolsVersion = 7.2;
+						TestTargetID = 8F14AD5C1C92681600CADABA;
+					};
+					8F14AD801C92681600CADABA = {
+						CreatedOnToolsVersion = 7.2;
+						TestTargetID = 8F14AD5C1C92681600CADABA;
+					};
+				};
+			};
+			buildConfigurationList = 8F14AD581C92681600CADABA /* Build configuration list for PBXProject "库存管理" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 8F14AD541C92681600CADABA;
+			productRefGroup = 8F14AD5E1C92681600CADABA /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8F14AD5C1C92681600CADABA /* 库存管理 */,
+				8F14AD751C92681600CADABA /* 库存管理Tests */,
+				8F14AD801C92681600CADABA /* 库存管理UITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		8F14AD5B1C92681600CADABA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8F14AD701C92681600CADABA /* LaunchScreen.storyboard in Resources */,
+				8F14ADB31C9299A500CADABA /* WriteProduct.xib in Resources */,
+				8F14ADAE1C92985300CADABA /* MainView.xib in Resources */,
+				8F14AD6D1C92681600CADABA /* Assets.xcassets in Resources */,
+				8F14AD6B1C92681600CADABA /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8F14AD741C92681600CADABA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8F14AD7F1C92681600CADABA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8F14AD591C92681600CADABA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8F14AD651C92681600CADABA /* AppDelegate.m in Sources */,
+				8F14ADAA1C92985300CADABA /* NaviViewController.m in Sources */,
+				8F14ADB61C929D9800CADABA /* WriteViewController.m in Sources */,
+				8F14ADB91C929E6300CADABA /* ChooseViewController.m in Sources */,
+				8F14ADB11C92999100CADABA /* WriteProduct.m in Sources */,
+				8F14ADAB1C92985300CADABA /* ViewController.m in Sources */,
+				8F14AD621C92681600CADABA /* main.m in Sources */,
+				8F14ADAC1C92985300CADABA /* Model.m in Sources */,
+				8F14ADAD1C92985300CADABA /* MainView.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8F14AD721C92681600CADABA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8F14AD7B1C92681600CADABA /* ____Tests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8F14AD7D1C92681600CADABA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8F14AD861C92681700CADABA /* ____UITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		8F14AD781C92681600CADABA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8F14AD5C1C92681600CADABA /* 库存管理 */;
+			targetProxy = 8F14AD771C92681600CADABA /* PBXContainerItemProxy */;
+		};
+		8F14AD831C92681700CADABA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8F14AD5C1C92681600CADABA /* 库存管理 */;
+			targetProxy = 8F14AD821C92681700CADABA /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		8F14AD691C92681600CADABA /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8F14AD6A1C92681600CADABA /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		8F14AD6E1C92681600CADABA /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8F14AD6F1C92681600CADABA /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		8F14AD881C92681700CADABA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		8F14AD891C92681700CADABA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		8F14AD8B1C92681700CADABA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				INFOPLIST_FILE = "库存管理/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = kucun;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+			};
+			name = Debug;
+		};
+		8F14AD8C1C92681700CADABA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				INFOPLIST_FILE = "库存管理/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = kucun;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+			};
+			name = Release;
+		};
+		8F14AD8E1C92681700CADABA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = "库存管理Tests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "BYJJYY.----Tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/库存管理.app/库存管理";
+			};
+			name = Debug;
+		};
+		8F14AD8F1C92681700CADABA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = "库存管理Tests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "BYJJYY.----Tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/库存管理.app/库存管理";
+			};
+			name = Release;
+		};
+		8F14AD911C92681700CADABA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = "库存管理UITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "BYJJYY.----UITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = "库存管理";
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		8F14AD921C92681700CADABA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = "库存管理UITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "BYJJYY.----UITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = "库存管理";
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		8F14AD581C92681600CADABA /* Build configuration list for PBXProject "库存管理" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8F14AD881C92681700CADABA /* Debug */,
+				8F14AD891C92681700CADABA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8F14AD8A1C92681700CADABA /* Build configuration list for PBXNativeTarget "库存管理" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8F14AD8B1C92681700CADABA /* Debug */,
+				8F14AD8C1C92681700CADABA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8F14AD8D1C92681700CADABA /* Build configuration list for PBXNativeTarget "库存管理Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8F14AD8E1C92681700CADABA /* Debug */,
+				8F14AD8F1C92681700CADABA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8F14AD901C92681700CADABA /* Build configuration list for PBXNativeTarget "库存管理UITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8F14AD911C92681700CADABA /* Debug */,
+				8F14AD921C92681700CADABA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 8F14AD551C92681600CADABA /* Project object */;
+}
