@@ -11,7 +11,7 @@
             <rect key="frame" x="0.0" y="0.0" width="400" height="300"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="目前库存余额:0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5AF-rU-XkX">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="目前库存余额:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5AF-rU-XkX">
                     <rect key="frame" x="170" y="240" width="210" height="30"/>
                     <color key="backgroundColor" red="0.0" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
@@ -86,25 +86,23 @@
                         </mask>
                     </variation>
                 </textField>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="产品名称:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Lc-wB-E9y">
-                    <rect key="frame" x="20" y="20" width="250" height="50"/>
-                    <constraints>
-                        <constraint firstAttribute="width" constant="250" id="8Zj-hW-5tH"/>
-                        <constraint firstAttribute="height" constant="50" id="l1O-TG-Dv9"/>
-                    </constraints>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="产品型号:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ynm-ys-MKB">
                     <rect key="frame" x="20" y="120" width="250" height="50"/>
                     <constraints>
+                        <constraint firstAttribute="height" constant="50" id="B8b-Hb-AIe"/>
+                        <constraint firstAttribute="width" constant="250" id="wRP-f7-yjn"/>
                         <constraint firstAttribute="height" constant="50" id="wwq-6L-Bjl"/>
                         <constraint firstAttribute="width" constant="250" id="zHI-xl-1HO"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
+                    <variation key="default">
+                        <mask key="constraints">
+                            <exclude reference="wwq-6L-Bjl"/>
+                            <exclude reference="zHI-xl-1HO"/>
+                        </mask>
+                    </variation>
                 </label>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="sWW-3T-E4D">
                     <rect key="frame" x="280" y="20" width="100" height="150"/>
@@ -115,25 +113,55 @@
                     </constraints>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="产品编码:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Fg-Hq-T8f">
-                    <rect key="frame" x="20" y="70" width="250" height="50"/>
+                    <rect key="frame" x="20" y="20" width="250" height="50"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="250" id="MQM-lL-7dC"/>
+                        <constraint firstAttribute="width" constant="250" id="Y5G-s8-vVA"/>
+                        <constraint firstAttribute="height" constant="50" id="cfX-5v-gi7"/>
                         <constraint firstAttribute="height" constant="50" id="hpy-Mr-ufA"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
+                    <variation key="default">
+                        <mask key="constraints">
+                            <exclude reference="MQM-lL-7dC"/>
+                            <exclude reference="hpy-Mr-ufA"/>
+                        </mask>
+                    </variation>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="产品名称:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Lc-wB-E9y">
+                    <rect key="frame" x="20" y="70" width="250" height="50"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="250" id="8Zj-hW-5tH"/>
+                        <constraint firstAttribute="height" constant="50" id="OtP-Tp-elq"/>
+                        <constraint firstAttribute="height" constant="50" id="l1O-TG-Dv9"/>
+                        <constraint firstAttribute="width" constant="250" id="qXa-9v-3uC"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                    <variation key="default">
+                        <mask key="constraints">
+                            <exclude reference="8Zj-hW-5tH"/>
+                            <exclude reference="l1O-TG-Dv9"/>
+                        </mask>
+                    </variation>
                 </label>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="UEp-fW-uZP" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" id="0Ap-eR-5xu"/>
+                <constraint firstItem="2BT-qN-vOS" firstAttribute="top" secondItem="ynm-ys-MKB" secondAttribute="bottom" constant="20" id="320-K3-IpU"/>
+                <constraint firstItem="ynm-ys-MKB" firstAttribute="top" secondItem="2Lc-wB-E9y" secondAttribute="bottom" id="391-0C-yO3"/>
                 <constraint firstItem="2Lc-wB-E9y" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" id="3cr-w7-03u"/>
                 <constraint firstItem="5AF-rU-XkX" firstAttribute="top" secondItem="1ZF-6T-BHb" secondAttribute="bottom" constant="20" id="69W-Nz-JaI"/>
+                <constraint firstItem="2Lc-wB-E9y" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" id="7If-8e-JX9"/>
                 <constraint firstItem="sWW-3T-E4D" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="20" id="Aac-Jx-itR"/>
                 <constraint firstItem="1ZF-6T-BHb" firstAttribute="top" secondItem="5AF-rU-XkX" secondAttribute="bottom" constant="150" id="AwT-4X-9md"/>
                 <constraint firstItem="1ZF-6T-BHb" firstAttribute="top" secondItem="sWW-3T-E4D" secondAttribute="bottom" constant="20" id="BOF-Sr-Yao"/>
                 <constraint firstAttribute="trailing" secondItem="1ZF-6T-BHb" secondAttribute="trailing" constant="50" id="C68-Jw-AER"/>
+                <constraint firstItem="ynm-ys-MKB" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" id="DOX-ec-ECg"/>
                 <constraint firstItem="ynm-ys-MKB" firstAttribute="top" secondItem="2Lc-wB-E9y" secondAttribute="bottom" constant="50" id="Gaa-vQ-mtc"/>
                 <constraint firstItem="5AF-rU-XkX" firstAttribute="leading" secondItem="UEp-fW-uZP" secondAttribute="trailing" constant="50" id="Gh1-ty-pur"/>
                 <constraint firstItem="2BT-qN-vOS" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" id="JqN-uQ-xya"/>
@@ -141,13 +169,16 @@
                 <constraint firstItem="UEp-fW-uZP" firstAttribute="top" secondItem="2BT-qN-vOS" secondAttribute="bottom" constant="20" id="MGx-B6-moh"/>
                 <constraint firstAttribute="trailing" secondItem="5AF-rU-XkX" secondAttribute="trailing" constant="20" id="Ngy-xh-fKN"/>
                 <constraint firstItem="2Fg-Hq-T8f" firstAttribute="top" secondItem="2Lc-wB-E9y" secondAttribute="bottom" id="Nl7-xx-O2H"/>
+                <constraint firstItem="2Fg-Hq-T8f" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="20" id="PNq-P0-Q6t"/>
                 <constraint firstItem="5AF-rU-XkX" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="100" id="QiZ-Iy-tEU"/>
                 <constraint firstItem="UEp-fW-uZP" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="50" id="UVO-zs-1pz"/>
                 <constraint firstItem="2BT-qN-vOS" firstAttribute="top" secondItem="5AF-rU-XkX" secondAttribute="bottom" constant="100" id="UiS-3y-Jum"/>
                 <constraint firstItem="2BT-qN-vOS" firstAttribute="top" secondItem="ynm-ys-MKB" secondAttribute="bottom" constant="20" id="W7d-W8-3RG"/>
                 <constraint firstAttribute="trailing" secondItem="sWW-3T-E4D" secondAttribute="trailing" constant="20" id="YEf-cb-dFy"/>
                 <constraint firstItem="2Fg-Hq-T8f" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" id="Zaj-l5-zgT"/>
+                <constraint firstItem="2Lc-wB-E9y" firstAttribute="top" secondItem="2Fg-Hq-T8f" secondAttribute="bottom" id="es3-7Y-HUa"/>
                 <constraint firstItem="ynm-ys-MKB" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" id="gkc-SF-NAZ"/>
+                <constraint firstItem="2Fg-Hq-T8f" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" id="hpY-bO-svH"/>
                 <constraint firstItem="2BT-qN-vOS" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="50" id="o7J-Z9-NQg"/>
                 <constraint firstAttribute="trailing" secondItem="1ZF-6T-BHb" secondAttribute="trailing" constant="20" id="uOb-eO-5uF"/>
                 <constraint firstItem="5AF-rU-XkX" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="wfU-Kr-6b0"/>
@@ -156,7 +187,14 @@
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <variation key="default">
                 <mask key="constraints">
+                    <exclude reference="Nl7-xx-O2H"/>
+                    <exclude reference="Zaj-l5-zgT"/>
+                    <exclude reference="3cr-w7-03u"/>
+                    <exclude reference="K2Y-Lj-Qc8"/>
+                    <exclude reference="Gaa-vQ-mtc"/>
+                    <exclude reference="gkc-SF-NAZ"/>
                     <exclude reference="UiS-3y-Jum"/>
+                    <exclude reference="W7d-W8-3RG"/>
                     <exclude reference="o7J-Z9-NQg"/>
                     <exclude reference="UVO-zs-1pz"/>
                     <exclude reference="z9U-Yy-xop"/>
@@ -170,7 +208,10 @@
                 <outlet property="addTextField" destination="2BT-qN-vOS" id="80c-Py-SSN"/>
                 <outlet property="button" destination="1ZF-6T-BHb" id="hFT-4d-A44"/>
                 <outlet property="decreaseTextField" destination="UEp-fW-uZP" id="fcs-fZ-7Od"/>
+                <outlet property="keyNum" destination="2Fg-Hq-T8f" id="1Sd-ZL-Yga"/>
                 <outlet property="label" destination="5AF-rU-XkX" id="e1L-YS-wGj"/>
+                <outlet property="name" destination="2Lc-wB-E9y" id="sQn-rV-z1b"/>
+                <outlet property="type" destination="ynm-ys-MKB" id="Cjn-bx-SQ8"/>
             </connections>
             <point key="canvasLocation" x="269" y="157"/>
         </view>

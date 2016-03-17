@@ -10,4 +10,19 @@
 
 @implementation Model
 
++ (Model *)createWithKeyNum:(NSInteger)keyNum {
+
+    NSDictionary *dic = [[NSUserDefaults standardUserDefaults] objectForKey:[NSString stringWithFormat:@"ProductWithKeyNum%d",keyNum]];
+    
+    Model *model = [[Model alloc] init];
+    
+    model.productID = dic[@"keyNum"];
+    model.productName = dic[@"name"];
+    model.productType = dic[@"type"];
+    
+    return model;
+
+
+}
+
 @end

@@ -15,4 +15,7 @@
 @property (nonatomic,copy)NSString *productType;
 @property (nonatomic,copy)NSString *productImage;
 
+//用来根据已有的keynum创建对应的model
++ (Model *)createWithKeyNum:(NSInteger)keyNum;
+
 @end

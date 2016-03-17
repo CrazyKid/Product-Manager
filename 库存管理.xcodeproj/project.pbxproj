@@ -23,6 +23,9 @@
 		8F14ADB31C9299A500CADABA /* WriteProduct.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8F14ADB21C9299A500CADABA /* WriteProduct.xib */; };
 		8F14ADB61C929D9800CADABA /* WriteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F14ADB51C929D9800CADABA /* WriteViewController.m */; };
 		8F14ADB91C929E6300CADABA /* ChooseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F14ADB81C929E6300CADABA /* ChooseViewController.m */; };
+		8F5A7C921C98097800CBF5A0 /* erweima.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8F5A7C911C98097800CBF5A0 /* erweima.jpg */; };
+		8F5A7C961C99A0A500CBF5A0 /* ProductCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F5A7C941C99A0A400CBF5A0 /* ProductCell.m */; };
+		8F5A7C971C99A0A500CBF5A0 /* ProductCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8F5A7C951C99A0A400CBF5A0 /* ProductCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +76,10 @@
 		8F14ADB51C929D9800CADABA /* WriteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WriteViewController.m; sourceTree = "<group>"; };
 		8F14ADB71C929E6300CADABA /* ChooseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChooseViewController.h; sourceTree = "<group>"; };
 		8F14ADB81C929E6300CADABA /* ChooseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChooseViewController.m; sourceTree = "<group>"; };
+		8F5A7C911C98097800CBF5A0 /* erweima.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = erweima.jpg; sourceTree = "<group>"; };
+		8F5A7C931C99A0A400CBF5A0 /* ProductCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductCell.h; sourceTree = "<group>"; };
+		8F5A7C941C99A0A400CBF5A0 /* ProductCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductCell.m; sourceTree = "<group>"; };
+		8F5A7C951C99A0A400CBF5A0 /* ProductCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProductCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,6 +138,7 @@
 				8F14ADA61C92985300CADABA /* View */,
 				8F14AD6C1C92681600CADABA /* Assets.xcassets */,
 				8F14AD6E1C92681600CADABA /* LaunchScreen.storyboard */,
+				8F5A7C911C98097800CBF5A0 /* erweima.jpg */,
 				8F14AD711C92681600CADABA /* Info.plist */,
 				8F14AD601C92681600CADABA /* Supporting Files */,
 			);
@@ -196,6 +204,9 @@
 				8F14ADAF1C92999100CADABA /* WriteProduct.h */,
 				8F14ADB01C92999100CADABA /* WriteProduct.m */,
 				8F14ADB21C9299A500CADABA /* WriteProduct.xib */,
+				8F5A7C931C99A0A400CBF5A0 /* ProductCell.h */,
+				8F5A7C941C99A0A400CBF5A0 /* ProductCell.m */,
+				8F5A7C951C99A0A400CBF5A0 /* ProductCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -306,8 +317,10 @@
 			files = (
 				8F14AD701C92681600CADABA /* LaunchScreen.storyboard in Resources */,
 				8F14ADB31C9299A500CADABA /* WriteProduct.xib in Resources */,
+				8F5A7C971C99A0A500CBF5A0 /* ProductCell.xib in Resources */,
 				8F14ADAE1C92985300CADABA /* MainView.xib in Resources */,
 				8F14AD6D1C92681600CADABA /* Assets.xcassets in Resources */,
+				8F5A7C921C98097800CBF5A0 /* erweima.jpg in Resources */,
 				8F14AD6B1C92681600CADABA /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -338,6 +351,7 @@
 				8F14ADB61C929D9800CADABA /* WriteViewController.m in Sources */,
 				8F14ADB91C929E6300CADABA /* ChooseViewController.m in Sources */,
 				8F14ADB11C92999100CADABA /* WriteProduct.m in Sources */,
+				8F5A7C961C99A0A500CBF5A0 /* ProductCell.m in Sources */,
 				8F14ADAB1C92985300CADABA /* ViewController.m in Sources */,
 				8F14AD621C92681600CADABA /* main.m in Sources */,
 				8F14ADAC1C92985300CADABA /* Model.m in Sources */,

@@ -13,8 +13,11 @@
 
 @interface ViewController () <UITableViewDataSource,UITableViewDelegate>
 
+@property (nonatomic,strong)UITableView *tableView;
+
 @property (nonatomic,assign)CGFloat kScreenHeight;
 @property (nonatomic,assign)CGFloat kScreenWidth;
+@property (nonatomic,assign)NSInteger keyNum;
 
 @end
 
@@ -25,6 +28,9 @@
     
     _kScreenHeight = [UIScreen mainScreen].bounds.size.height - 69;
     _kScreenWidth = [UIScreen mainScreen].bounds.size.width;
+
+    _keyNum = 0;
+     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(notificationAction:) name:@"keyNumNoti" object:nil];
     
     self.navigationController.navigationBar.translucent = NO;
     
@@ -39,6 +45,15 @@
     [self _createTableView];
     
     [self _createCountInOutLabel];
+
+}
+
+- (void)notificationAction:(NSNotification *)notification {
+
+    _keyNum = [notification.userInfo[@"keyNum"] integerValue];
+    
+    [_tableView reloadData];
+
 }
 
 - (void)_createProductView {
@@ -67,14 +82,16 @@
 
 - (void)_createTableView {
     
-    UITableView *tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 310, _kScreenWidth, _kScreenHeight - 310 - 20)];
+    _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 310, _kScreenWidth, _kScreenHeight - 310 - 20)];
     
-    [self.view addSubview:tableView];
+    [self.view addSubview:_tableView];
     
-    tableView.delegate = self;
-    tableView.dataSource = self;
+    _tableView.tag = 1124;
     
-    [tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"cell"];
+    _tableView.delegate = self;
+    _tableView.dataSource = self;
+    
+    [_tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"cell"];
     
 }
 
@@ -122,7 +139,7 @@
 
     if (button.tag == 100) {
         ChooseViewController *vc = [[ChooseViewController alloc] init];
-        
+
         [self.navigationController pushViewController:vc animated:YES];
     }
     if (button.tag == 101) {
@@ -138,14 +155,37 @@
 #pragma mark - tableView delegate
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 
-    return 20;
+    NSArray *arr = [[NSUserDefaults standardUserDefaults] objectForKey:[NSString stringWithFormat:@"countLeftWithKeyNum%d",_keyNum]];
+    
+    if (arr == nil) {
+        return 0;
+    }
+    
+    return arr.count;
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
 
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
     
-    cell.textLabel.text = [NSString stringWithFormat:@"row = %d",indexPath.row];
+    NSArray *arr = [[NSUserDefaults standardUserDefaults] objectForKey:[NSString stringWithFormat:@"countLeftWithKeyNum%d",_keyNum]];
     
+    NSInteger count = [((NSDictionary *)arr[indexPath.row])[@"count"] integerValue];
+    
+    if (indexPath.row != 0) {
+        count = [[arr[indexPath.row] objectForKey:@"count"] integerValue] - [[arr[indexPath.row - 1] objectForKey:@"count"] integerValue];
+    }
+    
+    NSString *time = [arr[indexPath.row] objectForKey:@"time"];
+    
+    if (count >= 0) {
+        cell.textLabel.text = [NSString stringWithFormat:@"%d.%@入库%d",indexPath.row + 1,time,count];
+        
+    }
+    else {
+        cell.textLabel.text = [NSString stringWithFormat:@"%d.%@出库%d",indexPath.row + 1,time,-count];
+    }
+
+    cell.textLabel.font = [UIFont systemFontOfSize:12];
     return cell;
 
 }

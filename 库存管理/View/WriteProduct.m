@@ -30,12 +30,10 @@
     
     [_imageView addGestureRecognizer:tap];
     
-    NSNumber *keyNum = [[NSUserDefaults standardUserDefaults] objectForKey:@"nextKeyNum"];
-    
-    NSLog(@"%@",keyNum);
+    NSString *keyNum = [[NSUserDefaults standardUserDefaults] objectForKey:@"nextKeyNum"];
     
     if ( keyNum == nil) {
-        [[NSUserDefaults standardUserDefaults] setObject:@1 forKey:@"nextKeyNum"];
+        [[NSUserDefaults standardUserDefaults] setObject:[NSString stringWithFormat:@"%d",1] forKey:@"nextKeyNum"];
     }
     
     _keyNumber.text = [NSString stringWithFormat:@"%d",[[[NSUserDefaults standardUserDefaults] objectForKey:@"nextKeyNum"] integerValue]];
@@ -48,14 +46,13 @@
 
 
 
-
 }
 
 - (IBAction)save:(id)sender {
     
     if (_nam.text.length == 0) {
         
-        [self warningEmpty];
+        [self saveResult:@"empty"];
         
         return;
         
@@ -65,24 +62,55 @@
     
     keyNum++;
     
-    [[NSUserDefaults standardUserDefaults] setObject:[NSNumber numberWithInteger:keyNum] forKey:@"nextKeyNum"];
+    [[NSUserDefaults standardUserDefaults] setObject:[NSString stringWithFormat:@"%d",keyNum] forKey:@"nextKeyNum"];
     
     
+//图片的保存还没做
     
+    NSString *type = _type.text.length == 0 ? @"" : _type.text;
+    
+    NSDictionary *productInfo = @{@"name":_nam.text,@"type":type,@"keyNum":[NSString stringWithFormat:@"%d",keyNum - 1]};
+    
+    [[NSUserDefaults standardUserDefaults] setObject:productInfo forKey:[NSString stringWithFormat:@"ProductWithKeyNum%d",keyNum - 1]];
+    
+    
+    dispatch_async(dispatch_get_main_queue(), ^{
+       _keyNumber.text = [NSString stringWithFormat:@"%d",[[[NSUserDefaults standardUserDefaults] objectForKey:@"nextKeyNum"] integerValue]];
+        
+        _nam.text = nil;
+        _type.text = nil;
+        _imageView.image = nil;
+    });
+    
+    [self saveResult:@"success"];
     
 }
 
-- (void)warningEmpty {
+- (void)saveResult:(NSString *)result {
 
-    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(([UIScreen mainScreen].bounds.size.width - 50) / 2.0, ([UIScreen mainScreen].bounds.size.height - 69 - 30) / 2.0, 50, 30)];
+    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(([UIScreen mainScreen].bounds.size.width - 150) / 2.0, ([UIScreen mainScreen].bounds.size.height - 69 - 30) / 2.0, 150, 30)];
     
     label.backgroundColor = [UIColor grayColor];
     
     label.tag = 666;
     
+    label.textColor = [UIColor whiteColor];
+    
+    label.textAlignment = NSTextAlignmentCenter;
+    
+    label.font = [UIFont systemFontOfSize:15];
+    
+    if ([result isEqualToString:@"success"]) {
+        label.text = @"保存成功";
+    }
+    else if ([result isEqualToString:@"empty"]) {
+    
+        label.text = @"产品名不能为空";
+    }
+    
     [self.window addSubview:label];
     
-    [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(timerAction:) userInfo:nil repeats:YES];
+    [NSTimer scheduledTimerWithTimeInterval:1.5 target:self selector:@selector(timerAction:) userInfo:nil repeats:YES];
     
 }
 
