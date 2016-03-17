@@ -26,23 +26,6 @@
 
 @implementation MainView
 
-- (void)setFrame:(CGRect)frame {
-
-    [super setFrame:frame];
-    
-//    if ([[NSUserDefaults standardUserDefaults] objectForKey:@"countLeft"] != nil) {
-//        count = [[[NSUserDefaults standardUserDefaults] objectForKey:@"countLeft"] intValue];
-//    }
-//    
-//    _label.text = [NSString stringWithFormat:@"目前库存余额:%ld",count];
-    
-//    _button.enabled = NO;
-//    
-//    _addTextField.delegate = self;
-//    _decreaseTextField.delegate = self;
-    
-}
-
 //- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string {
 //
 //    NSLog(@"%@,%ld", string,_addTextField.text.length);
@@ -59,6 +42,9 @@
     [super awakeFromNib];
 
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(notificationAction:) name:@"keyNumNoti" object:nil];
+    
+    _addTextField.delegate = self;
+    _decreaseTextField.delegate = self;
     
 }
 
@@ -84,7 +70,13 @@
 
 - (IBAction)buttonAction:(id)sender {
     
-    if (_keyNum == 0) {
+    [_addTextField resignFirstResponder];
+    [_decreaseTextField resignFirstResponder];
+
+    if (_key == 0) {
+        
+        _addTextField.text = nil;
+        _decreaseTextField.text = nil;
         return;
     }
     if (_addTextField.text.length == 0 && _decreaseTextField.text.length == 0) {

@@ -22,10 +22,10 @@
 
 @implementation WriteProduct
 
-- (void)setFrame:(CGRect)frame {
+- (void)awakeFromNib {
 
-    [super setFrame:frame];
-
+    [super awakeFromNib];
+    
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(clickAction:)];
     
     [_imageView addGestureRecognizer:tap];
@@ -38,8 +38,27 @@
     
     _keyNumber.text = [NSString stringWithFormat:@"%d",[[[NSUserDefaults standardUserDefaults] objectForKey:@"nextKeyNum"] integerValue]];
     
-
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(popKeyBoard:) name:UIKeyboardWillShowNotification object:nil];
+    
 }
+
+- (void)popKeyBoard:(NSNotification *)notification {
+
+    NSValue *value = notification.userInfo[@"UIKeyboardBoundsUserInfoKey"];
+    CGRect rect = [value CGRectValue];
+    CGFloat height = rect.size.height;
+    
+    //   （3）调整View的高度和tableView的高度
+    [UIView animateWithDuration:0.25 animations:^{
+        
+        self.transform = CGAffineTransformMakeTranslation(0, -height);
+
+    }];
+
+    
+}
+
+
 
 - (void)clickAction:(UITapGestureRecognizer *)tap {
 
@@ -49,6 +68,18 @@
 }
 
 - (IBAction)save:(id)sender {
+    
+    
+    [UIView animateWithDuration:0.25 animations:^{
+        self.transform = CGAffineTransformIdentity;
+
+    }];
+    
+    //    （2）键盘掉下来
+    [_type resignFirstResponder];
+    [_nam resignFirstResponder];
+    
+    
     
     if (_nam.text.length == 0) {
         
