@@ -8,10 +8,12 @@
 
 #import "MainView.h"
 #import "Model.h"
+#import "CoreDataManager.h"
+#import "Product.h"
+#import "InOutTime.h"
 
 @interface MainView () <UITextFieldDelegate>
 
-@property (weak, nonatomic) IBOutlet UILabel *label;
 @property (weak, nonatomic) IBOutlet UITextField *addTextField;
 @property (weak, nonatomic) IBOutlet UITextField *decreaseTextField;
 @property (weak, nonatomic) IBOutlet UIButton *button;
@@ -19,7 +21,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *keyNum;
 @property (weak, nonatomic) IBOutlet UILabel *type;
 
-@property (nonatomic,assign)NSInteger count;
 @property (nonatomic,assign)NSInteger key;
 
 @end
@@ -35,6 +36,16 @@
 //    }
 //
 //    return YES;
+//}
+
+//- (void)textFieldDidBeginEditing:(UITextField *)textField {
+//
+//    [UIView animateWithDuration:0.25 animations:^{
+//        
+//        self.transform = CGAffineTransformMakeTranslation(0, -100);
+//        
+//    }];
+//
 //}
 
 - (void)awakeFromNib {
@@ -58,17 +69,16 @@
     _keyNum.text = [NSString stringWithFormat:@"产品编号:%@",model.productID];
     _type.text = [NSString stringWithFormat:@"产品类型:%@",model.productType];
     
-    if ([[NSUserDefaults standardUserDefaults] objectForKey:[NSString stringWithFormat:@"countLeftWithKeyNum%d",_key]] != nil) {
-        NSArray *array = [[NSUserDefaults standardUserDefaults] objectForKey:[NSString stringWithFormat:@"countLeftWithKeyNum%d",_key]];
-        
-        _count = [array.lastObject[@"count"] integerValue];
-    }
-    
-    _label.text = [NSString stringWithFormat:@"目前库存余额:%d",_count];
-    
 }
 
 - (IBAction)buttonAction:(id)sender {
+    
+//    [UIView animateWithDuration:0.25 animations:^{
+//        
+//        self.transform = CGAffineTransformIdentity;
+//        
+//    }];
+
     
     [_addTextField resignFirstResponder];
     [_decreaseTextField resignFirstResponder];
@@ -83,7 +93,7 @@
         return;
     }
   
-    int add = 0,decrease = 0;
+    NSInteger add = 0,decrease = 0,count = 0,keyIDInOut = 0;
     
     if (_addTextField.text.length != 0) {
         add = [_addTextField.text integerValue];
@@ -92,41 +102,48 @@
         decrease = [_decreaseTextField.text integerValue];
     }
 
-
-    NSArray *array = [[NSUserDefaults standardUserDefaults] objectForKey:[NSString stringWithFormat:@"countLeftWithKeyNum%d",_key]];
+    Product *product = [[CoreDataManager shareManager] productWithKeyID:_key];
     
-    NSMutableArray *newArr = (array == nil) ? [NSMutableArray array] : [array mutableCopy];
+    NSInteger last = product.inOut.count;
     
-    if (array != nil) {
-        _count = [array.lastObject[@"count"] integerValue];
-    }
-
+    InOutTime *lastOne = [[CoreDataManager shareManager] inOutTimeWithKeyID:_key keyIDInOut:last - 1];
     
     
-    _count = _count + add - decrease;
-
-    _label.text = [NSString stringWithFormat:@"目前库存余额:%d",_count];
+    count = (lastOne == nil) ? 0 : lastOne.numbers;
+    keyIDInOut = (lastOne == nil) ? 1 : (product.inOut.count + 1);
+    
+    count = count + add - decrease;
     
     _addTextField.text = nil;
     _decreaseTextField.text = nil;
     
     //插入修改时间
-    NSDate *date = [NSDate date];
-    NSTimeZone *zone = [NSTimeZone systemTimeZone];
-    NSInteger interval = [zone secondsFromGMTForDate:date];
-    NSDate *localDate = [date dateByAddingTimeInterval:interval];
-    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
-    [formatter setDateFormat:@"yyyy年M月d日 H点m分"];
-    NSString *dateStr = [formatter stringFromDate:localDate];
+    //实例化一个NSDateFormatter对象
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    //设定时间格式,这里可以设置成自己需要的格式
+    [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
+    //用[NSDate date]可以获取系统当前时间
+    NSString *currentDateStr = [dateFormatter stringFromDate:[NSDate date]];
+    //输出格式为：2010-10-27 10:22:13
     
-    [newArr addObject:@{@"count":[NSNumber numberWithInteger:_count],@"time":dateStr}];
-    
-    [[NSUserDefaults standardUserDefaults] setObject:newArr forKey:[NSString stringWithFormat:@"countLeftWithKeyNum%d",_key]];
+    [[CoreDataManager shareManager] addInOutWithProductKeyID:_key inOutNumbers:count inOutKeyID:keyIDInOut inOutTime:currentDateStr];
     
     [((UITableView *)[self.superview viewWithTag:1124]) reloadData];
     
 //    _button.enabled = NO;
 
+    //库存的数量刷新
+    UILabel *label = [self.superview viewWithTag:612];
+    
+    Product *product1 = [[CoreDataManager shareManager] productWithKeyID:_key];
+    
+    NSSet *set = product1.inOut;
+    
+    int count1 = ([[CoreDataManager shareManager] inOutTimeWithKeyID:_key keyIDInOut:set.count - 1]).numbers;
+    
+    dispatch_async(dispatch_get_main_queue(), ^{
+        label.text = [NSString stringWithFormat:@"库存剩余:%d",count1];
+    });
 }
 
 

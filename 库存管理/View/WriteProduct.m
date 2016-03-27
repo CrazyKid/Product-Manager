@@ -7,6 +7,7 @@
 //
 
 #import "WriteProduct.h"
+#import "CoreDataManager.h"
 
 @interface WriteProduct ()
 
@@ -30,16 +31,11 @@
     
     [_imageView addGestureRecognizer:tap];
     
-    NSString *keyNum = [[NSUserDefaults standardUserDefaults] objectForKey:@"nextKeyNum"];
+    NSInteger keyID = [[CoreDataManager shareManager] dataCount] + 1;
     
-    if ( keyNum == nil) {
-        [[NSUserDefaults standardUserDefaults] setObject:[NSString stringWithFormat:@"%d",1] forKey:@"nextKeyNum"];
-    }
-    
-    _keyNumber.text = [NSString stringWithFormat:@"%d",[[[NSUserDefaults standardUserDefaults] objectForKey:@"nextKeyNum"] integerValue]];
+    _keyNumber.text = [NSString stringWithFormat:@"%03ld",keyID];
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(popKeyBoard:) name:UIKeyboardWillShowNotification object:nil];
-    
 }
 
 - (void)popKeyBoard:(NSNotification *)notification {
@@ -89,31 +85,21 @@
         
     }
     
-    NSInteger keyNum = [[[NSUserDefaults standardUserDefaults] objectForKey:@"nextKeyNum"] integerValue];
+    NSString *saveResult = [[CoreDataManager shareManager] addProductObjectWithKeyID:[_keyNumber.text integerValue] name:_nam.text type:_type.text];
     
-    keyNum++;
-    
-    [[NSUserDefaults standardUserDefaults] setObject:[NSString stringWithFormat:@"%d",keyNum] forKey:@"nextKeyNum"];
     
     
 //图片的保存还没做
     
-    NSString *type = _type.text.length == 0 ? @"" : _type.text;
-    
-    NSDictionary *productInfo = @{@"name":_nam.text,@"type":type,@"keyNum":[NSString stringWithFormat:@"%d",keyNum - 1]};
-    
-    [[NSUserDefaults standardUserDefaults] setObject:productInfo forKey:[NSString stringWithFormat:@"ProductWithKeyNum%d",keyNum - 1]];
-    
-    
     dispatch_async(dispatch_get_main_queue(), ^{
-       _keyNumber.text = [NSString stringWithFormat:@"%d",[[[NSUserDefaults standardUserDefaults] objectForKey:@"nextKeyNum"] integerValue]];
+       _keyNumber.text = [NSString stringWithFormat:@"%03ld",[_keyNumber.text integerValue] + 1];
         
         _nam.text = nil;
         _type.text = nil;
         _imageView.image = nil;
     });
     
-    [self saveResult:@"success"];
+    [self saveResult:saveResult];
     
 }
 
@@ -137,6 +123,10 @@
     else if ([result isEqualToString:@"empty"]) {
     
         label.text = @"产品名不能为空";
+    }
+    else if ([result isEqualToString:@"fail"]) {
+    
+        label.text = @"保存失败";
     }
     
     [self.window addSubview:label];

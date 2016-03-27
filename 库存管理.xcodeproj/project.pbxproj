@@ -26,6 +26,15 @@
 		8F5A7C921C98097800CBF5A0 /* erweima.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8F5A7C911C98097800CBF5A0 /* erweima.jpg */; };
 		8F5A7C961C99A0A500CBF5A0 /* ProductCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F5A7C941C99A0A400CBF5A0 /* ProductCell.m */; };
 		8F5A7C971C99A0A500CBF5A0 /* ProductCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8F5A7C951C99A0A400CBF5A0 /* ProductCell.xib */; };
+		8FEEFC731CA2DD19004F46A2 /* Product.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8FEEFC711CA2DD19004F46A2 /* Product.xcdatamodeld */; };
+		8FEEFC7D1CA2E063004F46A2 /* CoreDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FEEFC7C1CA2E063004F46A2 /* CoreDataManager.m */; };
+		8FEEFCC81CA3A4D7004F46A2 /* InOutTime+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FEEFCC11CA3A4D7004F46A2 /* InOutTime+CoreDataProperties.m */; };
+		8FEEFCC91CA3A4D7004F46A2 /* InOutTime.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FEEFCC31CA3A4D7004F46A2 /* InOutTime.m */; };
+		8FEEFCCA1CA3A4D7004F46A2 /* Product+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FEEFCC51CA3A4D7004F46A2 /* Product+CoreDataProperties.m */; };
+		8FEEFCCB1CA3A4D7004F46A2 /* Product.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FEEFCC71CA3A4D7004F46A2 /* Product.m */; };
+		8FEEFCCF1CA764E9004F46A2 /* 产品输入.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8FEEFCCC1CA764E9004F46A2 /* 产品输入.jpg */; };
+		8FEEFCD01CA764E9004F46A2 /* 恒曼库存.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8FEEFCCD1CA764E9004F46A2 /* 恒曼库存.jpg */; };
+		8FEEFCD11CA764E9004F46A2 /* 货品信息.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8FEEFCCE1CA764E9004F46A2 /* 货品信息.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,6 +89,20 @@
 		8F5A7C931C99A0A400CBF5A0 /* ProductCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductCell.h; sourceTree = "<group>"; };
 		8F5A7C941C99A0A400CBF5A0 /* ProductCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductCell.m; sourceTree = "<group>"; };
 		8F5A7C951C99A0A400CBF5A0 /* ProductCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProductCell.xib; sourceTree = "<group>"; };
+		8FEEFC721CA2DD19004F46A2 /* Product.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Product.xcdatamodel; sourceTree = "<group>"; };
+		8FEEFC7B1CA2E063004F46A2 /* CoreDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreDataManager.h; sourceTree = "<group>"; };
+		8FEEFC7C1CA2E063004F46A2 /* CoreDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataManager.m; sourceTree = "<group>"; };
+		8FEEFCC01CA3A4D7004F46A2 /* InOutTime+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "InOutTime+CoreDataProperties.h"; sourceTree = "<group>"; };
+		8FEEFCC11CA3A4D7004F46A2 /* InOutTime+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "InOutTime+CoreDataProperties.m"; sourceTree = "<group>"; };
+		8FEEFCC21CA3A4D7004F46A2 /* InOutTime.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InOutTime.h; sourceTree = "<group>"; };
+		8FEEFCC31CA3A4D7004F46A2 /* InOutTime.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InOutTime.m; sourceTree = "<group>"; };
+		8FEEFCC41CA3A4D7004F46A2 /* Product+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Product+CoreDataProperties.h"; sourceTree = "<group>"; };
+		8FEEFCC51CA3A4D7004F46A2 /* Product+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Product+CoreDataProperties.m"; sourceTree = "<group>"; };
+		8FEEFCC61CA3A4D7004F46A2 /* Product.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Product.h; sourceTree = "<group>"; };
+		8FEEFCC71CA3A4D7004F46A2 /* Product.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Product.m; sourceTree = "<group>"; };
+		8FEEFCCC1CA764E9004F46A2 /* 产品输入.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "产品输入.jpg"; sourceTree = "<group>"; };
+		8FEEFCCD1CA764E9004F46A2 /* 恒曼库存.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "恒曼库存.jpg"; sourceTree = "<group>"; };
+		8FEEFCCE1CA764E9004F46A2 /* 货品信息.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "货品信息.jpg"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,15 +153,21 @@
 		8F14AD5F1C92681600CADABA /* 库存管理 */ = {
 			isa = PBXGroup;
 			children = (
+				8FEEFC7A1CA2DE37004F46A2 /* CoreData */,
 				8F14AD631C92681600CADABA /* AppDelegate.h */,
 				8F14AD641C92681600CADABA /* AppDelegate.m */,
 				8F14AD691C92681600CADABA /* Main.storyboard */,
+				8FEEFC7B1CA2E063004F46A2 /* CoreDataManager.h */,
+				8FEEFC7C1CA2E063004F46A2 /* CoreDataManager.m */,
+				8FEEFCCC1CA764E9004F46A2 /* 产品输入.jpg */,
+				8FEEFCCD1CA764E9004F46A2 /* 恒曼库存.jpg */,
+				8FEEFCCE1CA764E9004F46A2 /* 货品信息.jpg */,
+				8F5A7C911C98097800CBF5A0 /* erweima.jpg */,
 				8F14AD9E1C92985300CADABA /* Controller */,
 				8F14ADA31C92985300CADABA /* Model */,
 				8F14ADA61C92985300CADABA /* View */,
 				8F14AD6C1C92681600CADABA /* Assets.xcassets */,
 				8F14AD6E1C92681600CADABA /* LaunchScreen.storyboard */,
-				8F5A7C911C98097800CBF5A0 /* erweima.jpg */,
 				8F14AD711C92681600CADABA /* Info.plist */,
 				8F14AD601C92681600CADABA /* Supporting Files */,
 			);
@@ -209,6 +238,22 @@
 				8F5A7C951C99A0A400CBF5A0 /* ProductCell.xib */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		8FEEFC7A1CA2DE37004F46A2 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				8FEEFC711CA2DD19004F46A2 /* Product.xcdatamodeld */,
+				8FEEFCC01CA3A4D7004F46A2 /* InOutTime+CoreDataProperties.h */,
+				8FEEFCC11CA3A4D7004F46A2 /* InOutTime+CoreDataProperties.m */,
+				8FEEFCC21CA3A4D7004F46A2 /* InOutTime.h */,
+				8FEEFCC31CA3A4D7004F46A2 /* InOutTime.m */,
+				8FEEFCC41CA3A4D7004F46A2 /* Product+CoreDataProperties.h */,
+				8FEEFCC51CA3A4D7004F46A2 /* Product+CoreDataProperties.m */,
+				8FEEFCC61CA3A4D7004F46A2 /* Product.h */,
+				8FEEFCC71CA3A4D7004F46A2 /* Product.m */,
+			);
+			name = CoreData;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -318,10 +363,13 @@
 				8F14AD701C92681600CADABA /* LaunchScreen.storyboard in Resources */,
 				8F14ADB31C9299A500CADABA /* WriteProduct.xib in Resources */,
 				8F5A7C971C99A0A500CBF5A0 /* ProductCell.xib in Resources */,
+				8FEEFCD11CA764E9004F46A2 /* 货品信息.jpg in Resources */,
 				8F14ADAE1C92985300CADABA /* MainView.xib in Resources */,
 				8F14AD6D1C92681600CADABA /* Assets.xcassets in Resources */,
 				8F5A7C921C98097800CBF5A0 /* erweima.jpg in Resources */,
+				8FEEFCD01CA764E9004F46A2 /* 恒曼库存.jpg in Resources */,
 				8F14AD6B1C92681600CADABA /* Main.storyboard in Resources */,
+				8FEEFCCF1CA764E9004F46A2 /* 产品输入.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -348,13 +396,19 @@
 			files = (
 				8F14AD651C92681600CADABA /* AppDelegate.m in Sources */,
 				8F14ADAA1C92985300CADABA /* NaviViewController.m in Sources */,
+				8FEEFCCA1CA3A4D7004F46A2 /* Product+CoreDataProperties.m in Sources */,
 				8F14ADB61C929D9800CADABA /* WriteViewController.m in Sources */,
+				8FEEFC731CA2DD19004F46A2 /* Product.xcdatamodeld in Sources */,
+				8FEEFCCB1CA3A4D7004F46A2 /* Product.m in Sources */,
 				8F14ADB91C929E6300CADABA /* ChooseViewController.m in Sources */,
+				8FEEFCC81CA3A4D7004F46A2 /* InOutTime+CoreDataProperties.m in Sources */,
 				8F14ADB11C92999100CADABA /* WriteProduct.m in Sources */,
 				8F5A7C961C99A0A500CBF5A0 /* ProductCell.m in Sources */,
+				8FEEFC7D1CA2E063004F46A2 /* CoreDataManager.m in Sources */,
 				8F14ADAB1C92985300CADABA /* ViewController.m in Sources */,
 				8F14AD621C92681600CADABA /* main.m in Sources */,
 				8F14ADAC1C92985300CADABA /* Model.m in Sources */,
+				8FEEFCC91CA3A4D7004F46A2 /* InOutTime.m in Sources */,
 				8F14ADAD1C92985300CADABA /* MainView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -608,6 +662,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		8FEEFC711CA2DD19004F46A2 /* Product.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				8FEEFC721CA2DD19004F46A2 /* Product.xcdatamodel */,
+			);
+			currentVersion = 8FEEFC721CA2DD19004F46A2 /* Product.xcdatamodel */;
+			path = Product.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 8F14AD551C92681600CADABA /* Project object */;
 }

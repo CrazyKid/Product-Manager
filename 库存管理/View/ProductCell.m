@@ -20,12 +20,6 @@
 
 @implementation ProductCell
 
-- (void)awakeFromNib {
-    
-
-   
-}
-
 - (void)setModel:(Model *)model {
 
     _model = model;

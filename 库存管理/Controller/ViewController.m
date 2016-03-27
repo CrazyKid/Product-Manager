@@ -10,6 +10,9 @@
 #import "MainView.h"
 #import "WriteViewController.h"
 #import "ChooseViewController.h"
+#import "CoreDataManager.h"
+#import "Product.h"
+#import "InOutTime.h"
 
 @interface ViewController () <UITableViewDataSource,UITableViewDelegate>
 
@@ -30,6 +33,7 @@
     _kScreenWidth = [UIScreen mainScreen].bounds.size.width;
 
     _keyNum = 0;
+    
      [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(notificationAction:) name:@"keyNumNoti" object:nil];
     
     self.navigationController.navigationBar.translucent = NO;
@@ -53,6 +57,18 @@
     _keyNum = [notification.userInfo[@"keyNum"] integerValue];
     
     [_tableView reloadData];
+    
+    UILabel *label = [self.view viewWithTag:612];
+    
+    Product *product1 = [[CoreDataManager shareManager] productWithKeyID:_keyNum];
+    
+    NSSet *set = product1.inOut;
+    
+    int count1 = ([[CoreDataManager shareManager] inOutTimeWithKeyID:_keyNum keyIDInOut:set.count - 1]).numbers;
+    
+    dispatch_async(dispatch_get_main_queue(), ^{
+        label.text = [NSString stringWithFormat:@"库存剩余:%d",count1];
+    });
 
 }
 
@@ -99,7 +115,9 @@
 
     UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, _kScreenHeight - 20, _kScreenWidth, 20)];
     
-    label.text = @"本月出库:本月入库:库存剩余:";
+    label.tag = 612;
+    
+    label.text = @"库存剩余:0";
 
     label.textColor = [UIColor redColor];
     
@@ -154,37 +172,40 @@
 
 #pragma mark - tableView delegate
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-
-    NSArray *arr = [[NSUserDefaults standardUserDefaults] objectForKey:[NSString stringWithFormat:@"countLeftWithKeyNum%d",_keyNum]];
-    
-    if (arr == nil) {
+    if (_keyNum == 0) {
         return 0;
     }
     
-    return arr.count;
+    NSSet *inOutSet = ([[CoreDataManager shareManager] productWithKeyID:_keyNum]).inOut;
+    
+    
+    return (inOutSet == nil) ? 0 : inOutSet.count;
 }
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
 
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
+
+    NSSet *set = ([[CoreDataManager shareManager] productWithKeyID:_keyNum]).inOut;
     
-    NSArray *arr = [[NSUserDefaults standardUserDefaults] objectForKey:[NSString stringWithFormat:@"countLeftWithKeyNum%d",_keyNum]];
+    int count = ([[CoreDataManager shareManager] inOutTimeWithKeyID:_keyNum keyIDInOut:0]).numbers;
     
-    NSInteger count = [((NSDictionary *)arr[indexPath.row])[@"count"] integerValue];
-    
-    if (indexPath.row != 0) {
-        count = [[arr[indexPath.row] objectForKey:@"count"] integerValue] - [[arr[indexPath.row - 1] objectForKey:@"count"] integerValue];
-    }
-    
-    NSString *time = [arr[indexPath.row] objectForKey:@"time"];
-    
-    if (count >= 0) {
-        cell.textLabel.text = [NSString stringWithFormat:@"%d.%@入库%d",indexPath.row + 1,time,count];
+    if (indexPath.row == 0) {
         
+        InOutTime *inOut = [set anyObject];
+        
+        cell.textLabel.text = count > 0 ? [NSString stringWithFormat:@"1.%@入库%d",inOut.time,count] : [NSString stringWithFormat:@"1.%@出库%d",inOut.time,count];
     }
     else {
-        cell.textLabel.text = [NSString stringWithFormat:@"%d.%@出库%d",indexPath.row + 1,time,-count];
+        
+        InOutTime *inOut1 = [[CoreDataManager shareManager] inOutTimeWithKeyID:_keyNum keyIDInOut:indexPath.row];
+        InOutTime *inOut2 = [[CoreDataManager shareManager] inOutTimeWithKeyID:_keyNum keyIDInOut:indexPath.row - 1];
+        
+        count = inOut1.numbers - inOut2.numbers;
+        
+        cell.textLabel.text = count > 0 ? [NSString stringWithFormat:@"%ld.%@入库%d",indexPath.row + 1,inOut1.time,count] : [NSString stringWithFormat:@"%ld.%@出库%d",indexPath.row + 1,inOut1.time,-count];
     }
-
+    
     cell.textLabel.font = [UIFont systemFontOfSize:12];
     return cell;
 

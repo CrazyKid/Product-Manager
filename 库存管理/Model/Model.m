@@ -7,21 +7,22 @@
 //
 
 #import "Model.h"
+#import "CoreDataManager.h"
+#import "Product.h"
 
 @implementation Model
 
 + (Model *)createWithKeyNum:(NSInteger)keyNum {
-
-    NSDictionary *dic = [[NSUserDefaults standardUserDefaults] objectForKey:[NSString stringWithFormat:@"ProductWithKeyNum%d",keyNum]];
+    
+    Product *product = [[CoreDataManager shareManager] productWithKeyID:keyNum];
     
     Model *model = [[Model alloc] init];
     
-    model.productID = dic[@"keyNum"];
-    model.productName = dic[@"name"];
-    model.productType = dic[@"type"];
+    model.productID = [NSString stringWithFormat:@"%03lld",product.keyID];
+    model.productName = product.name;
+    model.productType = product.type;
     
     return model;
-
 
 }
 

@@ -9,9 +9,15 @@
 #import "ChooseViewController.h"
 #import "ProductCell.h"
 #import "Model.h"
+#import "CoreDataManager.h"
+#import "Product.h"
 
 
-@interface ChooseViewController () <UITableViewDataSource,UITableViewDelegate>
+@interface ChooseViewController () <UITableViewDataSource,UITableViewDelegate,UITextFieldDelegate>
+
+@property (nonatomic,strong)UITableView *table;
+@property (nonatomic,assign)BOOL flagOfSearch;
+@property (nonatomic,strong)NSMutableArray *searchArr;
 
 @end
 
@@ -27,6 +33,8 @@
     [self _createSearch];
     
     [self _createTableView];
+
+    _flagOfSearch = NO;
     
 }
 
@@ -39,23 +47,25 @@
     textField.placeholder = @"请输入搜索信息";
     
     [self.view addSubview:textField];
+    
+    textField.delegate = self;
 
 }
 
 - (void)_createTableView {
 
-    UITableView *table = [[UITableView alloc] initWithFrame:CGRectMake(0, 30, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height - 69 - 30)];
+    _table = [[UITableView alloc] initWithFrame:CGRectMake(0, 30, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height - 69 - 30)];
     
-    [self.view addSubview:table];
+    [self.view addSubview:_table];
     
-    table.delegate = self;
-    table.dataSource = self;
+    _table.delegate = self;
+    _table.dataSource = self;
     
-    table.separatorColor = [UIColor redColor];
+    _table.separatorColor = [UIColor redColor];
     
-    table.rowHeight = 80;
+    _table.rowHeight = 80;
     
-    [table registerNib:[UINib nibWithNibName:@"ProductCell" bundle:nil] forCellReuseIdentifier:@"productCellIdentifier"];
+    [_table registerNib:[UINib nibWithNibName:@"ProductCell" bundle:nil] forCellReuseIdentifier:@"productCellIdentifier"];
 
 }
 
@@ -79,16 +89,30 @@
     
 }
 
+#pragma mark - textField delegate
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+
+    NSString *str = textField.text;
+    
+    NSArray * arr = [[CoreDataManager shareManager] queryProductWithString:[NSString stringWithFormat:@"keyID like '*%@*' || name like '*%@*' || type like '*%@*'",str,str,str]];
+
+    _flagOfSearch = YES;
+    
+    _searchArr = [arr mutableCopy];
+    
+    [_table reloadData];
+    
+    return YES;
+}
+
 #pragma mark - tableView delegate 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-
-    NSNumber *num = [[NSUserDefaults standardUserDefaults] objectForKey:@"nextKeyNum"];
     
-    if (num == nil) {
-        return 0;
+    if (_flagOfSearch) {
+        return _searchArr.count;
     }
-    
-    return [num integerValue] - 1;
+    return [[CoreDataManager shareManager] dataCount];
 
 }
 
@@ -96,20 +120,49 @@
 
     ProductCell *cell = [tableView dequeueReusableCellWithIdentifier:@"productCellIdentifier"forIndexPath:indexPath];
     
-    cell.model = [Model createWithKeyNum:indexPath.row + 1];
-    
+    if (_flagOfSearch) {
+        cell.model = [Model createWithKeyNum:((Product *)_searchArr[indexPath.row]).keyID];
+    }
+    else {
+        cell.model = [Model createWithKeyNum:indexPath.row + 1];
+    }
     return cell;
 
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
-    
-    [[NSNotificationCenter defaultCenter] postNotificationName:@"keyNumNoti" object:nil userInfo:@{@"keyNum":[NSString stringWithFormat:@"%d",indexPath.row + 1]}];
+    NSInteger keyID = indexPath.row + 1;
+    if (_flagOfSearch) {
+        keyID = ((Product *)_searchArr[indexPath.row]).keyID;
+    }
 
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"keyNumNoti" object:nil userInfo:@{@"keyNum":[NSString stringWithFormat:@"%ld",keyID]}];
     
     [self.navigationController popToRootViewControllerAnimated:YES];
-    
-   
+
+}
+
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        
+        [tableView beginUpdates];//和endUpdates一起使用，在这两个方法之间，会自己决定调用的顺序，从而避免之前陈述的情况
+        if (_flagOfSearch) {
+            NSInteger keyID = ((Product *)_searchArr[indexPath.row]).keyID;
+            [_searchArr removeObjectAtIndex:indexPath.row];
+            [[CoreDataManager shareManager] deleteProductWithKeyID:keyID];
+            [[CoreDataManager shareManager] updateProductWithDelectKeyID:keyID];
+        }
+        else {
+            [[CoreDataManager shareManager] deleteProductWithKeyID:indexPath.row + 1];
+            [[CoreDataManager shareManager] updateProductWithDelectKeyID:indexPath.row + 1];
+        }
+        
+        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+        [tableView endUpdates];
+        
+        [tableView reloadData];
+    }
 }
 
 - (void)didReceiveMemoryWarning {
